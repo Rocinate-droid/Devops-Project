@@ -2,7 +2,7 @@
 terraform init
 terraform apply --auto-approve
 terraform output > ../updated-ids.txt
-if [ -s ../updated-ids.txt ]
+if grep "subnet-id" ../updated-ids.txt;
 then
 	old_subnet_id=$(grep "subnet-id" ../terraform.tfvars)
 	old_security_group_id=$(grep "security-group-id" ../terraform.tfvars)
