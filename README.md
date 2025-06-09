@@ -50,7 +50,6 @@ This project demonstrates a complete Infrastructure as Code (IaC) pipeline to pr
 | `ami`               | AMI ID to launch the EC2 instance               |
 | `instance-type`     | EC2 instance type (e.g., t2.micro)              |
 | `key`               | Key pair name to access the instance            |
-| `role`              | IAM role name (should allow EC2 access)         |
 | `private-ip`        | Private IP of the node instance                 |
 | `master-private-ip` | Private IP of the master instance               |
 
