@@ -56,7 +56,7 @@ This project demonstrates a complete Infrastructure as Code (IaC) pipeline to pr
 
 ## 🚀 Usage Instructions
 
-Note: Ensure that if you are using a windows machine, you would need to install a WSL and install git,ansible and terraform in it since ansible-vault can be edit using a linux os.
+Note: Ensure that if you are using a windows machine, you would need to install a WSL and install git,ansible and terraform in it since ansible-vault can be edited using linux based OS.
 
 ### 1. Clone the Repository
 
@@ -67,9 +67,8 @@ cd Devops-Project
 ## 2. AWS Credentials & Key Setup
 
 - Generate **Access Key** and **Secret Key** from your AWS account.
-- Create an **IAM Role** with EC2 access.
 - Generate an **EC2 key pair**  
-  *(Take care to change the IAM role and EC2 key pair in the terraform variables.)*
+  *(Take care to change the EC2 key pair name in the terraform variables.)*
 
 ---
 
