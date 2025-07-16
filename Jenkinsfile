@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        VAULT_PASSWORD = 'vault_password'
-    }
     stages {
          stage ("execute terraform build") {
             steps {
