@@ -22,6 +22,7 @@ pipeline {
                 ansible -m ping webservers
                 echo "$VAULT_PASSWORD" > password.txt
                 ansible-playbook playbook.yml --vault-password-file password.txt
+                rm password.txt
             '''
                 }
             }
@@ -31,8 +32,8 @@ pipeline {
                 //update docker image details here if needed
                 sh ''' 
                    sudo docker build -t nginx-image:v2 . 
-                   #sudo docker tag nginx-image:v2 typicalguy/nginx-image:v2
-                   #sudo docker push typicalguy/nginx-image:v2
+                   sudo docker tag nginx-image:v2 typicalguy/nginx-image:v2
+                   sudo docker push typicalguy/nginx-image:v2
                    '''
             }
         }
@@ -40,8 +41,8 @@ pipeline {
             steps {
                 //update docker service details here if needed
                 sh '''
-                sudo docker service create --name nginx-service --replicas=5 -p 80:80 nginx-image:v2
-                #sudo docker service update --image typicalguy/nginx-image:v2 nginx-service
+                sudo docker service create --name nginx-service --replicas=5 -p 80:80 typicalguy/nginx-image:v2
+                sudo docker service update --image typicalguy/nginx-image:v2 nginx-service
                    '''
             }
         }
