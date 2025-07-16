@@ -63,7 +63,7 @@ resource "aws_instance" "node-server" {
              apt install docker.io -y
              echo "ubuntu ALL=(ALL)  NOPASSWD: ALL" >> /etc/sudoers
              mkdir -p /home/ubuntu/.ssh
-             echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEPw1nfQ+ShaqjzZHgtOQHxvXDnReTWFBO/C+BrzXMvG jenkins@ip-10-0-2-100"
+             echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEPw1nfQ+ShaqjzZHgtOQHxvXDnReTWFBO/C+BrzXMvG jenkins@ip-10-0-2-100" > /home/ubuntu/.ssh/authorized_keys
               chown -R ubuntu:ubuntu /home/ubuntu/.ssh
               chmod 700 /home/ubuntu/.ssh
               chmod 600 /home/ubuntu/.ssh/authorized_keys
