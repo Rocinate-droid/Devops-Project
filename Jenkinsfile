@@ -22,7 +22,6 @@ pipeline {
                 ansible -m ping webservers
                 echo "$VAULT_PASSWORD" > password.txt
                 ansible-playbook playbook.yml --vault-password-file password.txt
-                rm password.txt
             '''
                 }
             }
